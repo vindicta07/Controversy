@@ -10,7 +10,7 @@ int main()
 
     for (int i = 1; i <= n; i++)
     {
-        product = product * i;                  // Or we can write here product *= 1;
+        product = product * i;                  // Or we can write here product *= i;
     }
 
     printf("Product = %lld", product);
