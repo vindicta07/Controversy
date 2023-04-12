@@ -10,6 +10,10 @@ const int stepPin1 = 3;
 // Define motor interface type
 #define motorInterfaceType 1
 
+
+// Phak U
+
+
 // Creates an instance
 AccelStepper myStepper(motorInterfaceType, stepPin, dirPin);
 AccelStepper myStepper1(motorInterfaceType, stepPin1, dirPin1);
