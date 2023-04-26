@@ -3,7 +3,7 @@
 #include "stdio.h"
 #include "conio.h"
 
-#define calc(x) do { \
+#define calc() do { \
 	if (i%2 != 0) { \
 		for (k=(num-i)/2; k >= 1; k--) \
 			printf("\t"); \
@@ -26,9 +26,9 @@ int main(void)
 			num -=1;
 
 		for (i = 0; i <= num; i++)
-			calc(i);
+			calc();
 		for (i = num-1; i >= 0; i--)
-			calc(i);
+			calc();
 	} else
 		printf("invalid entry!\n");
 
