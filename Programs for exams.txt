@@ -1,0 +1,437 @@
+Solutions Provided by: KRUNAL (FE-EXTC-B)
+All Rights Reserved. Please Ask Before Distribution. Not to be forwarded to SFIT UNOFFICIAL GROUP!
+
+
+
+
+-------Write a program to print 10 numbers consecutive in reverse order using while loop
+
+#include<stdio.h>
+
+int main()
+{
+  int i=10;
+  while(i>0)
+    {
+      printf("%d \n", i);
+      i--;
+    }
+
+  return 0;
+}
+
+--Output:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+
+
+
+
+
+
+-------Write a Program to check whether a entered string is a palindrome or not using user defined function
+
+// Palindrome Number is that number when reversed gives the same number
+// Eg: 191 reverse is 191 itself!
+
+
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
+
+bool pali(char str[])
+{
+  int len = strlen(str);
+  for(int i=0; i<len/2; i++)
+    {
+      if (str[i] != str[len-i-1])
+      {
+        return false;
+      }
+    }
+    return true;
+}
+
+int main()
+{
+  char str[100];
+  printf("Enter a String:");
+  scanf("%s", str);
+
+  if(pali(str))
+  {
+    printf("%s is a Palidrome Number \n",str);
+  }
+  else
+  {
+    printf("%s is not a Palindrome Number \n",str);
+  }
+
+  return 0;
+}
+
+--Output
+    Enter a String: 5665
+    5665 is a Palindrome Number
+
+
+
+
+
+
+
+
+
+-------Write a program to find a factorial of a given number using function.
+
+#include<stdio.h>
+
+int factorial(int n)
+{
+  int result = 1;
+  for(int i = 1; i<=n; i++)
+    {
+      result = result*i;
+    }
+
+  return result;
+}
+
+int main()
+{
+  int n;
+  printf("Enter a Number: ");
+  scanf("%d", &n);
+
+  printf("Factorial of %d is %d \n",n, factorial(n));
+
+  return 0;
+}
+
+
+--Output
+
+Enter a Number: 5
+Factorial of 5 is 120
+
+
+
+
+
+
+
+
+-------Write a program to display the following output:
+        1
+    1   2
+1   2   3
+
+#include <stdio.h>
+
+int main()
+{
+    int x = 0,y = 0;
+    int r = 0, count=1;
+  
+    printf("Enter the number of rows = ");
+    scanf("%u",&r);
+  
+    for(x=1; x<=r; ++x)
+    {
+        
+        for(y=x; y<r; ++y)
+        {
+            printf(" ");
+        }
+        
+        for(y=1; y<=x; ++y)
+        {
+            printf("%d",y);
+        }
+        
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+-------Write a Program to display the following output
+        *
+    *   *   *
+*   *   *   *   *
+
+
+#include <stdio.h>
+
+int main()
+{
+    int r,c,n;
+    printf("Enter No of Rows: ");
+    scanf("%d", &n);
+
+    for(r=1; r<=n; r++)
+      {
+        for(c=1; c<=4-r; c++)
+          {
+            printf(" ");
+          }
+
+        for(c=1; c<=2*r-1; c++)
+          {
+            printf("*");
+          }
+        
+          printf("\n");
+      }
+   
+    return 0;
+}
+
+
+
+
+
+
+
+-------Write a Program to display the following output:
+A
+B   C
+D   E   F
+
+
+#include <stdio.h>
+
+int main()
+{
+
+    int r, c, n;
+    char a = 65;
+    printf("Enter the number of rows = ");
+    scanf("%u",&n);
+  
+    for(r=1; r<=n; r++)
+    {
+        
+        for(c=1; c<=r; c++)
+        {
+            printf("%c",a);
+            a++;
+        }
+        
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+-------Write a Program to find whether a given number is Armstrong or not using do-while loop
+
+// A number is Armstrong Number if it is equal the sum of cube of its digits.
+// For Ex: 153 is an Armstrong number because (1)^3 + (5)^3 + (3)^3 = 1 + 125 + 27 = 153
+
+
+#include<stdio.h>  
+
+int main()    
+{    
+  int n,r,sum=0,temp;    
+  printf("Enter the Number = ");    
+  scanf("%d",&n);    
+  temp = n;
+  
+  do    
+  {    
+    r=n%10;    
+    sum=sum+(r*r*r);    
+    n=n/10;    
+  }
+    while(n>0);
+  
+  if(temp==sum)    
+  {
+    printf("The Number Provided is a Armstrong Number! \n");    
+  }
+  else
+  {
+    printf("The Number Provided is Not a Armstrong Number!\n "); 
+  }
+  return 0;  
+}  
+
+
+
+--Output
+Enter the Number = 153
+The Number Provided is a Armstrong Number! 
+
+
+
+
+
+
+
+
+-------Write a Program to Print Binary Equivalent of entered Decimal Number
+
+#include <stdio.h>
+int main() 
+{
+    int num, bin = 0, base = 1, rem;
+    printf("Enter a decimal integer: ");
+    scanf("%d", &num);
+    
+  while (num > 0) 
+    {
+        rem = num % 2;
+        bin = bin + rem * base;
+        num = num / 2;
+        base = base * 10;
+    }
+   
+  printf("Its binary equivalent is: %d\n", bin);
+  
+  return 0;
+}
+
+
+
+--Output
+Enter a decimal integer: 10
+Its binary equivalent is: 1010
+
+
+
+
+
+
+
+-------Write a Program to find Area and Perimeter of Rectangle using functions.
+        Write Different functions for Area and Perimeter.
+
+#include<stdio.h>
+
+int area(int x, int y)
+{
+  return x * y;
+}
+
+int peri(int x, int y)
+{
+  return 2*(x+y);
+}
+
+int main()
+{
+  int l, b;
+  
+  printf("Enter Length and Breadth of the Rectangle: ");
+  scanf("%d %d", &l, &b);
+
+  printf("Area of the Rectangle is: %d\n",area(l, b));
+  printf("Perimeter of the Triangle is: %d\n ",peri(l, b));
+
+  return 0;
+}
+
+
+--Output
+Enter Length and Breadth of the Rectangle: 15 20
+Area of the Rectangle is: 300
+Perimeter of the Triangle is: 70
+
+
+
+
+
+
+
+
+-------Write a program to find Highest Common Factor of two numbers using while loop.
+
+#include<stdio.h>
+
+int main()
+{
+  int num1, num2;
+
+  printf("Enter Two Positive Numbers: ");
+  scanf("%d %d",&num1, &num2);
+
+  while(num1 != num2)
+    {
+      if(num1 > num2)
+      {
+        num1 -= num2;
+      }
+      else
+      {
+        num2 -= num1;
+      }
+    }
+
+  printf("Highest Common Factor is: %d \n ", num1);
+  
+  return 0;
+}
+
+
+--Output
+Enter Two Positive Numbers: 4 8
+Highest Common Factor is: 4 
+
+
+
+
+
+
+
+-------Write a program to find Highest Common Factor of two numbers using for loop.
+
+#include<stdio.h>
+
+int main()
+{
+  int i, num1, num2, min, hcf=1;
+
+  printf("Enter Two Positive Numbers: ");
+  scanf("%d %d",&num1, &num2);
+
+  min = (num1>num2)? num1:num2;
+
+  for(i=1; i<=min; i++)
+    {
+      if(num1%i==0 && num2%i==0)
+      {
+        hcf = i;
+      }
+    }
+
+  printf("Highest Common Factor is: %d \n ", hcf);
+  
+  return 0;
+}
+
+
+--Output
+Enter Two Positive Numbers: 4 8
+Highest Common Factor is: 4 
