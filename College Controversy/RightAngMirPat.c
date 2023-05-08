@@ -1,3 +1,11 @@
+// Write a Program in C to show the following Output:
+//      0
+//     01
+//    010
+//   0101
+//  01010
+
+
 #include <stdio.h>
 
 int main() 
