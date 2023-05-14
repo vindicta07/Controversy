@@ -1,3 +1,5 @@
+// Wirte a Program to calculate the sum of digits of given N number using functions.
+
 #include <stdio.h>
 
 int sum_of_digits(int n) {
