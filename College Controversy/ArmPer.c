@@ -1,3 +1,5 @@
+// Write a program in C to check armstrong and perfect numbers using the function.
+
 #include <stdio.h>
 #include <math.h>
 
