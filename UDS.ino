@@ -1,3 +1,6 @@
+// Task 1: Write a code in Arduino to measure distance using an ultrasonic distance sensor
+//          and display the distance at the serial monitor in Arduino IDE.
+
 // As I was not having Arduino UNO R3, it was not possible to execute in the Arduino IDE 
 // Environment. Therefore, by the use of Online Simulators like WOKWI, I debugged and
 // Executed the Program! 
