@@ -20,18 +20,19 @@ def detect_spherical_objects():
 
         # Use the Hough Circle Transform to detect circular objects
         circles = cv2.HoughCircles(blurred_frame, cv2.HOUGH_GRADIENT, dp=1, minDist=20,
-                                   param1=50, param2=30, minRadius=5, maxRadius=100)
+                                   param1=100, param2=30, minRadius=5, maxRadius=100)
 
         if circles is not None:
             circles = np.round(circles[0, :]).astype("int")
-
 
             hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
             lower_bound = np.array([5, 100, 100])
             upper_bound = np.array([20, 255, 255])
             mask = cv2.inRange(hsv_frame, lower_bound, upper_bound)
-            for (x, y, radius) in circles:
-                if mask[y, x] == 255:  # Check if the center of the circle is within the orange mask
+
+            for circle in circles:
+                x, y, radius = circle
+                if y < mask.shape[0] and x < mask.shape[1] and mask[y, x] == 255:
                     cv2.circle(frame, (x, y), radius, (0, 255, 0), 4)
 
         # Show the frame with detected objects
